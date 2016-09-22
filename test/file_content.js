@@ -58,7 +58,7 @@ function runTests() {
         });
 
         it('"index.html" should contain the correct jQuery version in the CDN URL', function (done) {
-            var string = 'ajax.googleapis.com/ajax/libs/jquery/' + pkg.devDependencies.jquery + '/jquery.min.js';
+            var string = 'code.jquery.com/jquery-' + pkg.devDependencies.jquery + '.min.js';
             checkString(path.resolve(dir, 'index.html'), string, done);
         });
 
@@ -69,7 +69,7 @@ function runTests() {
 
         it('"main.css" should contain a custom banner', function (done) {
             var string = '/*! HTML5 Boilerplate v' + pkg.version +
-                         ' | ' + pkg.license.type + ' License' +
+                         ' | ' + pkg.license + ' License' +
                          ' | ' + pkg.homepage + ' */\n\n/*\n';
             checkString(path.resolve(dir, 'css/main.css'), string, done);
         });
